@@ -18,7 +18,7 @@ export const connectDB = async () => {
 
     process.env.NODE_ENV === "test"
       ? console.log("✅ MongoDB Test connected!")
-      : "✅ MongoDB Test connected!"
+      : console.log("✅ MongoDB connected!")
   } catch (err) {
     console.error("❌ MongoDB connection failed:", err)
     process.exit(1)

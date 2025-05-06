@@ -1,5 +1,6 @@
 import { Request, Response } from "express"
 import * as cepService from "../services/cep-service"
+import { ApiError } from "../utils/api-error"
 
 export const sync = async (_req: Request, res: Response): Promise<void> => {
   const result = await cepService.syncCeps()
@@ -9,8 +10,7 @@ export const sync = async (_req: Request, res: Response): Promise<void> => {
 export const get = async (req: Request, res: Response): Promise<void> => {
   const result = await cepService.getCep(req.params.cep)
   if (!result) {
-    res.status(404).json({ error: "CEP não encontrado." })
-    return
+    throw new ApiError("CEP não encontrado.", 404)
   }
   res.json(result)
 }
@@ -22,8 +22,7 @@ export const update = async (req: Request, res: Response): Promise<void> => {
     bairro,
   })
   if (!result) {
-    res.status(404).json({ error: "CEP não encontrado para atualização." })
-    return
+    throw new ApiError("CEP não encontrado para atualização.", 404)
   }
   res.json(result)
 }
@@ -34,8 +33,7 @@ export const toggleFavorite = async (
 ): Promise<void> => {
   const result = await cepService.toggleFavorite(req.params.cep)
   if (!result) {
-    res.status(404).json({ error: "CEP não encontrado para favoritar." })
-    return
+    throw new ApiError("CEP não encontrado para favoritar.", 404)
   }
   res.json(result)
 }
