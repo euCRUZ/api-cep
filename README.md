@@ -61,7 +61,7 @@ cd api-cep
 npm install
 ```
 
-### 3. Confugure o arquivo `.env`
+### 3. Configure o arquivo `.env`
 
 ```bash
 cp .env.example .env
