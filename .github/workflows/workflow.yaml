@@ -6,6 +6,11 @@ jobs:
   continuous-integration:
     runs-on: ubuntu-latest
 
+    env:
+      MONGO_URI_TEST: ${{ secrets.MONGO_URI_TEST }}
+      PORT: 3000
+      NODE_ENV: test
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -14,6 +19,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20.x"
+
+      - name: Create .env for testing
+        run: echo "MONGO_URI_TEST=${{ secrets.MONGO_URI_TEST }}" > .env
 
       - name: Run install and test
         run: |
