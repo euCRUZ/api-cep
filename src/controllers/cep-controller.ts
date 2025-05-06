@@ -28,11 +28,11 @@ export const update = async (req: Request, res: Response): Promise<void> => {
   res.json(result)
 }
 
-export const toggleFavorito = async (
+export const toggleFavorite = async (
   req: Request,
   res: Response
 ): Promise<void> => {
-  const result = await cepService.toggleFavorito(req.params.cep)
+  const result = await cepService.toggleFavorite(req.params.cep)
   if (!result) {
     res.status(404).json({ error: "CEP não encontrado para favoritar." })
     return

@@ -6,7 +6,7 @@ const router = Router()
 router.get("/sync", cepController.sync)
 router.get("/:cep", cepController.get)
 router.put("/:cep", cepController.update)
-router.patch("/:cep/favorito", cepController.toggleFavorito)
+router.patch("/:cep/favorite", cepController.toggleFavorite)
 router.get("/", cepController.list)
 
 export default router

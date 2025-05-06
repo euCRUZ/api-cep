@@ -30,7 +30,7 @@ export const updateCep = async (
   return await CepModel.findOneAndUpdate({ cep }, data, { new: true })
 }
 
-export const toggleFavorito = async (cep: string) => {
+export const toggleFavorite = async (cep: string) => {
   const item = await CepModel.findOne({ cep })
   if (!item) return null
   item.favorito = !item.favorito
