@@ -1,4 +1,3 @@
-import "express-async-errors"
 import express from "express"
 import cepRoutes from "./routes/cep-routes"
 import dotenv from "dotenv"
