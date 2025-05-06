@@ -1,6 +1,6 @@
 # 📦 Desafio Técnico - Integração com API de CEP
 
-Aplicação Node.js com TypeScript para integração com a API ViaCEP. O sistema permite consultar, armazenar, editar, favoritar e listar CEPs usando um banco MongoDB (MongoDB Atlas). Inclui testes automatizados com Jest.
+Aplicação Node.js com TypeScript para integração com a API ViaCEP. O sistema permite consultar, armazenar, editar, favoritar e listar CEPs usando um banco MongoDB (MongoDB Atlas). Inclui testes automatizados com Jest e um workflow de integração contínua (CI) via GitHub Actions para garantir que a aplicação seja validada automaticamente a cada push ou pull request.
 
 ---
 
@@ -44,28 +44,17 @@ MONGO_URI=...        # Banco principal
 MONGO_URI_TEST=...   # Banco específico para testes
 ```
 
-Abaixo está a estrutura de diretórios do projeto:
+## 🚀 Integração Contínua (CI)
 
-```bash
-.
-├── src/
-│   ├── config/
-│   ├── controllers/
-│   ├── middlewares/
-│   ├── models/
-│   ├── services/
-│   ├── routes/
-│   ├── tests/
-│   ├── utils/
-│   ├── app.ts
-│   └── server.ts
-├── .env.example
-├── .gitignore
-├── .jest.config.js
-├── package.json
-├── tsconfig.json
-└── README.md
-```
+O projeto conta com um **workflow de Integração Contínua (CI)** implementado no **GitHub Actions**. O fluxo de CI é responsável por:
+
+- 📦 Instalar as dependências.
+- 🧪 Executar os testes automatizados utilizando **Jest**.
+- ✅ Garantir que a aplicação funcione corretamente com o banco de dados de testes configurado.
+
+O workflow é ativado automaticamente a cada **push** ou **pull request** para o repositório e está configurado no arquivo:
+
+`.github/workflows/ci.yaml`.
 
 ## 🛠️ Como rodar o projeto
 
