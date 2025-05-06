@@ -6,7 +6,7 @@ export function errorHandler(
   res: Response,
   _next: NextFunction
 ) {
-  console.error("💥 Erro captured:", err)
+  console.error("💥 Error captured:", err)
 
   const status = err.statusCode || 500
   const message = err.message || "Server internal error."
