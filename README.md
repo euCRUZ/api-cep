@@ -16,16 +16,6 @@ Aplicação Node.js com TypeScript para integração com a API ViaCEP. O sistema
 
 ---
 
-## 📌 Funcionalidades
-
-- 🔄 **Sincronizar** CEPs da API [ViaCEP](https://viacep.com.br/ws/RS/Porto%20Alegre/Domingos/json/)
-- 🔍 **Buscar** um CEP salvo no banco de dados
-- ✏️ **Editar** logradouro e bairro de um CEP
-- ⭐ **Favoritar/Desfavoritar** um CEP
-- 📄 **Listar** todos os CEPs cadastrados
-
----
-
 ## 📂 Organização do Projeto
 
 O projeto foi estruturado com **boas práticas de organização e separação de responsabilidades**, adotando a arquitetura MVC (Model - View - Controller) e módulos bem definidos como `services`, `routes`, `controllers`, `middlewares` e `models`.
